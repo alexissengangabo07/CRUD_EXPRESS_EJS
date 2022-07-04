@@ -7,5 +7,12 @@ const db = mongoose.connection;
 db.once('open', () => console.log('DATABASE CONNECTED SUCCESSFULY'));
 
 app.use(express.json());
+app.set('view engine', 'ejs');
+
+app.use('/css', express.static(__dirname + '/assets/css/'));
+app.use('/js', express.static(__dirname + '/assets/js/'));
+app.use('/img', express.static(__dirname + '/assets/img/'));
+
+app.get('/', (req, res) => res.render('index'));
 
 app.listen(8080, () => console.log('SERVER STARTED SUCCESSFULLY'));
