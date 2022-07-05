@@ -1,8 +1,179 @@
-* {
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+
+:root {
+    --dark: #2b2d42;
+    --light: #a3a5a5;
+    --border: #ceced1;
+    --border-btn: #edf2f4;
 }
 
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'PTS Sans', sans-serif;
 }
+
+a {
+    text-decoration: none;
+    font-family: 'PTS Sans', sans-serif;
+}
+
+.container {
+    padding:2px;
+    margin: auto;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-box {
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+
+.text-dark {
+    color: var(--dark);
+}
+
+.inline {
+    display: inline-block;
+}
+
+.text-light {
+    color: var(--light);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #8e2de2, #4a0020);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header nav {
+    background-color: #06d6a0;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#site-main {
+    margin-top: 2em;
+}
+
+#site-main ,.container .box-nav>a {
+    font-size: 1em;
+    padding: .5em 1em;
+}
+
+#site-main .container form {
+    margin: 2em 0;
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.table td, .table th {
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.table td > a.btn  {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+
+.table tbody>tr:hover {
+    background-color: #06d6a0;
+    transition: all 1s ease;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+/* Form style */
+
+.form-title {
+    margin-top: 2em;
+}
+
+.form-title  > h2 {
+    padding: .5em 0;
+}
+
+.new_user {
+    max-width: 786px;
+    margin: auto;
+}
+
+#update_user .form-group {
+    margin: 2em 0
+}
+
+#update_user .form-group input[type="text"] {
+    width: 100%;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: 1px solid var(--border);
+    font-family: "Barlow",  sans-serif;
+    font-size: 1em;
+    border-radius: .2em;
+}
+.form-group-radio {
+    display: flex;
+    gap: 15px;
+    margin: 2em 0;
+}
+
+.form-group-radio > div {
+    flex-basis: 100px;
+}
+
+.radio input[type="radio"] {
+    accent-color: green;
+}
+
+#update_user .form-group .btn {
+    width: 100%;
+    padding: .7em 1em;
+    margin: .5em 0;
+    border: none;
+    font-family: "Barlow",  sans-serif;
+    font-size: 1em;
+    border-radius: .2em;
+    background-color: #16db93;
+    cursor: pointer;
+    transition: all .5s ease;
+    font-weight: bold;
+}
+
+#update_user .form-group .btn:hover {
+    background-color: #1bb17a;
+}
+
+
+

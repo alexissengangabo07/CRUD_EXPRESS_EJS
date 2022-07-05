@@ -14,5 +14,6 @@ app.use('/js', express.static(__dirname + '/assets/js/'));
 app.use('/img', express.static(__dirname + '/assets/img/'));
 
 app.get('/', (req, res) => res.render('index'));
+app.get('/user', (req, res) => res.render('user'));
 
 app.listen(8080, () => console.log('SERVER STARTED SUCCESSFULLY'));
