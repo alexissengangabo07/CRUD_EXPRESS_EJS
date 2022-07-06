@@ -59,13 +59,6 @@ a {
     color: var(--light);
 }
 
-.text-gradient {
-    background: linear-gradient(to right, #8e2de2, #4a0020);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 #header nav {
     background-color: #06d6a0;
     padding: 1em 0;
@@ -91,22 +84,34 @@ table {
     padding: 0 20px;
 }
 
-.table td, .table th {
+.table td {
     padding: .75em;
     vertical-align: top;
-    text-align: center;
     border-top: 1px solid var(--border);
+    padding-left: 1.5em;
+}
+
+.table th {
+    padding: .75em;
+    vertical-align: top;
+    border-top: 1px solid var(--border);
+    text-align: left;
+    padding-left: 1.5em;
 }
 
 .table td > a.btn  {
-    padding: .3em 1em;
     font-size: 1.1em;
-    margin: 0 .2em;
+    margin-right: 2em;
+}
+
+.table tbody>tr:nth-of-type(even) {
+    background-color: rgb(233, 227, 227);
 }
 
 .table tbody>tr:hover {
-    background-color: #06d6a0;
+    background-color: #06d69e3d;
     transition: all 1s ease;
+    cursor: default;
 }
 
 .table .thead-dark th {
@@ -175,5 +180,18 @@ table {
     background-color: #1bb17a;
 }
 
+.fa-pencil-alt {
+    color: rgb(33, 135, 160);
+}
 
+.fa-times {
+    color: rgb(209, 47, 47);
+}
 
+.fa-pencil-alt:hover {
+    color: rgb(8, 80, 99);
+}
+
+.fa-times:hover {
+    color: red;
+}
