@@ -101,6 +101,9 @@ table {
 
 .table td > a.btn  {
     font-size: 1.1em;
+}
+
+.table td > a.btn:nth-of-type(1) {
     margin-right: 2em;
 }
 
