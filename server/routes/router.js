@@ -4,9 +4,9 @@ const controller = require('../controller/userController');
 
 router.get('/', services.homeRoute);
 
-router.get('/add-user', services.addUser);
+router.get('/add-user', services.addUserRoute);
 
-router.get('/update-user', services.addUser);
+router.get('/update-user', services.updateUserRoute);
 
 //API
 router.get('/:id', controller.findUser);
