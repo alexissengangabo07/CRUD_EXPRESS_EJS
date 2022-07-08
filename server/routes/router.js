@@ -13,6 +13,6 @@ router.get('/', controller.findUser);
 router.get('/:id', controller.findUser);
 router.post('/add-user', controller.createUser);
 router.patch('/update-user/:id', controller.updateUser);
-router.delete('/delete-user', controller.removeUser);
+router.delete('/delete-user/:id', controller.removeUser);
 
 module.exports = router;

@@ -19,18 +19,22 @@ exports.findUser = async (req, res) => {
 
 //Create User
 exports.createUser = async (req, res) => {
-    if(req.body.name != '' && req.body.email != '' && req.body.gender) {
-        res.status(200).send({message: 'Utlisateur inseree avec success'});
-        const userSave = await new userModel({
-            name: req.body.name,
-            email: req.body.email,
-            gender: req.body.gender,
-            status: req.body.status,
-        })
-        userSave.save()
-    }
-    else {
-        res.status(400).json({message: 'Remplissez le formulaire !'});
+    try {
+        if(req.body.name != '' && req.body.email != '' && req.body.gender) {
+            res.status(200).send({message: 'Utlisateur inseree avec success'});
+            const userSave = await new userModel({
+                name: req.body.name,
+                email: req.body.email,
+                gender: req.body.gender,
+                status: req.body.status,
+            })
+            userSave.save()
+        }
+        else {
+            res.status(400).json({message: 'Remplissez le formulaire !'});
+        }   
+    } catch (err) {
+        
     }
 }
 
@@ -46,6 +50,17 @@ exports.updateUser = async (req, res) => {
 }
 
 //Delete User
-exports.removeUser = (req, res) => {
-    
+exports.removeUser = async (req, res) => {
+    let id = req.params.id;
+    try {
+        if (id) {
+            let deleteUser = await userModel.findOneAndDelete({_id: id});
+            let users = await deleteUser.save();
+            res.status(200).json(users);
+        } else {
+            res.status(404).json({message: 'Utilisateur non trouvee'});
+        }
+    } catch (err) {
+        res.status(500).json({message: err + 'erreur'});       
+    }
 }
