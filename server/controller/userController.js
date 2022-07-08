@@ -1,8 +1,20 @@
 const userModel = require('../model/users');
 
 //Find User
-exports.findUser = (req, res) => {
-
+exports.findUser = async (req, res) => {
+    // res.json({message: req.params.id})
+    let id = req.params.id;
+   try {
+        if (id) {
+            let user = await userModel.findById(id);
+            res.status(200).json(user);
+        } else {
+           let user = await userModel.find();
+           res.status(200).json(user);
+        }
+   } catch (err) {
+        res.json({message: err});
+   }
 }
 
 //Create User
@@ -23,8 +35,14 @@ exports.createUser = async (req, res) => {
 }
 
 //Update User
-exports.updateUser = (req, res) => {
-    
+exports.updateUser = async (req, res) => {
+    let id = await req.params.id;
+    try {
+        let updateUser = await userModel.findByIdAndUpdate(id, req.body);
+        updateUser.save();
+    } catch (err) {
+        res.status(500).json({message: err})
+    }
 }
 
 //Delete User
