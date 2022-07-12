@@ -12,22 +12,21 @@ if(updateUserForm) {
     updateUserForm.addEventListener('submit',  (e) => {
         e.preventDefault();
         
-        let data = {};
+        let getData = {};
+        let data = new URLSearchParams();
         let formData = new FormData(updateUserForm);
         for (let i of formData) {
-            data[i[0]] = i[1];
+            getData[i[0]] = i[1];
+            data.append(i[0], i[1]);
         }
+        console.log(getData.id);
     
-        fetch(`/user_api/${data.id}`, {
-            method: 'patch',
-            body: formData,
-            headers: {
-                'Accept': '*/*',
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+        fetch(`user_api/${getData.id}`, {
+            method: 'PATCH',
+            body: data
         })
         .then(response => {
-            console.log(response);
+            console.log('reponse : ' + response);
         })
         .catch(err => {
             console.log(err);
