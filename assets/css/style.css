@@ -138,11 +138,11 @@ table {
     margin: auto;
 }
 
-#update_user .form-group {
+.form .form-group {
     margin: 2em 0
 }
 
-#update_user .form-group input[type="text"] {
+.form .form-group input[type="text"] {
     width: 100%;
     padding: .6em 1em;
     margin: .5em 0;
@@ -165,7 +165,7 @@ table {
     accent-color: green;
 }
 
-#update_user .form-group .btn {
+.form .form-group .btn {
     width: 100%;
     padding: .7em 1em;
     margin: .5em 0;
@@ -179,7 +179,7 @@ table {
     font-weight: bold;
 }
 
-#update_user .form-group .btn:hover {
+.form .form-group .btn:hover {
     background-color: #1bb17a;
 }
 

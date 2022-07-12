@@ -3,7 +3,7 @@ const userModel = require('../model/users');
 //Find User
 exports.findUser = async (req, res) => {
     // res.json({message: req.params.id})
-    let id = req.params.id;
+    let id = req.query.id;
    try {
         if (id) {
             let user = await userModel.findById(id);
@@ -44,7 +44,9 @@ exports.updateUser = async (req, res) => {
     let id = await req.params.id;
     try {
         let updateUser = await userModel.findByIdAndUpdate(id, req.body);
-        updateUser.save();
+        let users = await updateUser.save();
+        console.log(users);
+        res.status(200).json(users);
     } catch (err) {
         res.status(500).json({message: err})
     }

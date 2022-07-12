@@ -10,7 +10,7 @@ router.get('/update-user', services.updateUserRoute);
 //API
 router.get('/user_api', controller.findUser);
 router.post('/user_api', controller.createUser);
-router.patch('/user_api/:id', controller.updateUser);
+router.patch('/user_api/:id', (req, res) => req.params.id);
 router.delete('/user_api/:id', controller.removeUser);
 
 module.exports = router;
