@@ -18,66 +18,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% for( let i = 0; i < users.length; i++ ) { %>
                     <tr>
-                        <td>1</td>
-                        <td>Alexis</td>
-                        <td>alexxngabo@gmail.com</td>
-                        <td>Masculin</td>
-                        <td>Active</td>
+                        <td><%= i + 1 %></td>
+                        <td><%= users[i].name %></td>
+                        <td><%= users[i].email %></td>
+                        <td><%= users[i].gender %></td>
+                        <td><%= users[i].status %></td>
                         <td>
-                            <a href="/update-user" class="btn border-shadow update">
+                            <a href="/update-user/<%=users[i]._id%>" class="btn border-shadow update">
                                 <span class="text-gradient"><i class="fa fa-pencil-alt"></i></span>
                             </a>
-                            <a href="/delete-user" class="btn border-shadow update">
+                            <a href="/delete-user/<%=users[i]._id%>" class="btn border-shadow update">
                                 <span class="text-gradient"><i class="fas fa-times"></i></span>
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Raul</td>
-                        <td>raul@gmail.com</td>
-                        <td>Masculin</td>
-                        <td>Active</td>
-                        <td>
-                            <a href="/update-user" class="btn border-shadow update">
-                                <span class="text-gradient"><i class="fa fa-pencil-alt"></i></span>
-                            </a>
-                            <a href="/delete-user" class="btn border-shadow update">
-                                <span class="text-gradient"><i class="fas fa-times"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Cedric</td>
-                        <td>cedric@gmail.com</td>
-                        <td>Masculin</td>
-                        <td>Active</td>
-                        <td>
-                            <a href="/update-user" class="btn border-shadow update">
-                                <span class="text-gradient"><i class="fa fa-pencil-alt"></i></span>
-                            </a>
-                            <a href="/delete-user" class="btn border-shadow update">
-                                <span class="text-gradient"><i class="fas fa-times"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Benjamin</td>
-                        <td>benjamin@gmail.com</td>
-                        <td>Masculin</td>
-                        <td>Inactive</td>
-                        <td>
-                            <a href="/update-user" class="btn border-shadow update">
-                                <span class="text-gradient"><i class="fa fa-pencil-alt"></i></span>
-                            </a>
-                            <a href="/delete-user" class="btn border-shadow update">
-                                <span class="text-gradient"><i class="fas fa-times"></i></span>
-                            </a>
-                        </td>
-                    </tr>
+                    <% } %>
                 </tbody>
             </table>
         </form>

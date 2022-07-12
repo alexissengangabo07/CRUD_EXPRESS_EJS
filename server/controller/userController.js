@@ -21,7 +21,7 @@ exports.findUser = async (req, res) => {
 exports.createUser = async (req, res) => {
     try {
         if(req.body.name != '' && req.body.email != '' && req.body.gender) {
-            res.status(200).send({message: 'Utlisateur inseree avec success'});
+            // res.status(200).send({message: 'Utlisateur inseree avec success'});
             const userSave = await new userModel({
                 name: req.body.name,
                 email: req.body.email,
@@ -29,12 +29,13 @@ exports.createUser = async (req, res) => {
                 status: req.body.status,
             })
             userSave.save()
+            res.redirect('/');
         }
         else {
             res.status(400).json({message: 'Remplissez le formulaire !'});
         }   
     } catch (err) {
-        
+        res.json({message: err});
     }
 }
 
