@@ -2,14 +2,15 @@
     <div class="container">
         <div class="box-nav d-flex-justify-between">
             <a href="/add-user" class="border-shadow">
-                <span><i class="fa-solid fa-user"></i> Ajouter Utlisateur</span>
+                <span><i class="fa-solid fa-user-plus"></i>  Ajouter Utlisateur</span>
             </a>
         </div>
         <form action="/" method="post">
+            <div class="table-container">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>ID</th>
+                        <th>#</th>
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Genre</th>
@@ -37,6 +38,7 @@
                     <% } %>
                 </tbody>
             </table>
+            </div>
         </form>
     </div>
 </main>

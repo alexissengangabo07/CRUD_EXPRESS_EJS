@@ -59,6 +59,11 @@ a {
     color: var(--light);
 }
 
+#header {
+    position: sticky;
+    top: 0;
+}
+
 #header nav {
     background-color: #06d6a0;
     padding: 1em 0;
@@ -76,6 +81,12 @@ a {
 
 #site-main .container form {
     margin: 2em 0;
+}
+
+.table-container {
+    width: 98%;
+    position: relative;
+    overflow-x: scroll;
 }
 
 table {

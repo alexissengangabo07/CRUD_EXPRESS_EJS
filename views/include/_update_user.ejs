@@ -7,52 +7,53 @@
                      Tous les utilisateurs</a>
             </div>
         </div>
-        <div class="form-title text-center">
-            <h2 class="text-dark">Mettre à jour un utilisateur</h2>
-            <span class="text-light">Remplissez ce formulaire pour mettre à jour un utilisateur</span>
-        </div>
-        <form id="update_user" class="form" action="/user_api/" method="POST">
-            <div class="new_user">
-                <div class="form-group">
-                    <label for="name" class="text-light">Nom : </label>
-                    <input type="hidden" name="id" value="<%= user._id %>">
-                    <input type="text" name="name" value="<%= user.name %>" placeholder="Entrer le nom">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="text-light">Email : </label>
-                    <input type="text" name="email" value="<%= user.email %>" placeholder="Entrer l'email">
-                </div>
-                <div class="form-group-radio">
-                    <label for="gender" class="text-light">Genre : </label>
-                    <div class="radio">
-                        <label>
-                        <input type="radio" name="gender" value="Masculin" <%= user.gender =='Masculin' ? 'checked': '' %>>
-                        Masculin</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                        <input type="radio" name="gender" value="Feminin" <%= user.gender =='Feminin' ? 'checked': '' %>>
-                        Feminin</label>
-                    </div>
-                </div>
-                <div class="form-group-radio">
-                    <label for="status" class="text-light">Statut : </label>
-                    <div class="radio">
-                        <label>
-                        <input type="radio" name="status" value="Active" <%= user.status =='Active' ? 'checked': '' %>>
-                        Active</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                        <input type="radio" name="status" value="Inactive" <%= user.status =='Inactive' ? 'checked': '' %>>
-                        Inactive</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn text-dark update">Mettre à jour</button>
-                </div>
+        <div id="form-container">
+            <div class="form-title text-center">
+                <h2 class="text-dark">Mettre à jour un utilisateur</h2>
+                <span class="text-light">Remplissez ce formulaire pour mettre à jour un utilisateur</span>
             </div>
-        </form>
+            <form id="update_user" class="form" action="/user_api/" method="POST" autocomplete="off">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Nom : </label>
+                        <input type="hidden" name="id" value="<%= user._id %>">
+                        <input type="text" name="name" value="<%= user.name %>" placeholder="Entrer le nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-light">Email : </label>
+                        <input type="text" name="email" value="<%= user.email %>" placeholder="Entrer l'email">
+                    </div>
+                    <div class="form-group-radio">
+                        <label for="gender" class="text-light">Genre : </label>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="gender" value="Masculin" <%= user.gender =='Masculin' ? 'checked': '' %>>
+                            Masculin</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="gender" value="Feminin" <%= user.gender =='Feminin' ? 'checked': '' %>>
+                            Feminin</label>
+                        </div>
+                    </div>
+                    <div class="form-group-radio">
+                        <label for="status" class="text-light">Statut : </label>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="status" value="Active" <%= user.status =='Active' ? 'checked': '' %>>
+                            Active</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="status" value="Inactive" <%= user.status =='Inactive' ? 'checked': '' %>>
+                            Inactive</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Mettre à jour</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </main>
-   [ <%= (user.name) %> ]
