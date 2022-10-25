@@ -5,8 +5,11 @@
                 <span><i class="fa-solid fa-user-plus"></i>  Ajouter Utlisateur</span>
             </a>
         </div>
-        <form action="/" method="post">
-            <div class="table-container">
+        <div class="notification-success" style="max-width: 500px; margin:10px ;">
+            <span class="notification-close">&times;</span>
+            <p class="notification-text">Utilisateur supprimé avec succès!</p>
+        </div>
+        <div class="table-container">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -18,7 +21,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="myTable">
                     <% for( let i = 0; i < users.length; i++ ) { %>
                     <tr>
                         <td><%= i + 1 %></td>
@@ -38,7 +41,6 @@
                     <% } %>
                 </tbody>
             </table>
-            </div>
-        </form>
+        </div>
     </div>
 </main>

@@ -1,3 +1,4 @@
+const { default: mongoose } = require('mongoose');
 const userModel = require('../model/users');
 
 //Find User
@@ -28,7 +29,7 @@ exports.createUser = async (req, res) => {
                 gender: req.body.gender,
                 status: req.body.status,
             })
-            userSave.save()
+            userSave.save();
             res.redirect('/');
         }
         else {
@@ -57,7 +58,7 @@ exports.removeUser = async (req, res) => {
     let id = req.params.id;
     try {
         if (id) {
-            let deleteUser = await userModel.findOneAndDelete({_id: id});
+            let deleteUser = await userModel.findOneAndDelete({_id: mongoose.Types.ObjectId(id)});
             let users = await deleteUser.save();
             res.status(200).json(users);
         } else {

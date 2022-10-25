@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use('/css', express.static(path.resolve(__dirname + '/assets/css/')));
 app.use('/js', express.static(path.resolve(__dirname + '/assets/js/')));
 app.use('/img', express.static(path.resolve(__dirname + '/assets/img/')));
-
+const dir = path.resolve(__dirname);
 app.use('/', require('./server/routes/router'));
 
-app.listen(8080, () => console.log('SERVER STARTED SUCCESSFULLY'));
+app.listen(8080, () => console.log('SERVER STARTED SUCCESSFULLY', dir));
